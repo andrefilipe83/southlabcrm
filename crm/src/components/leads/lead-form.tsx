@@ -63,6 +63,10 @@ export function LeadForm({ aberto, onFechar, onGuardado, leadEditar, perfilActua
         etapa: leadEditar.etapa,
         valor_estimado: leadEditar.valor_estimado ?? undefined,
         owner_id: leadEditar.owner_id ?? undefined,
+        link_google_maps: leadEditar.link_google_maps ?? '',
+        link_facebook: leadEditar.link_facebook ?? '',
+        link_instagram: leadEditar.link_instagram ?? '',
+        link_outros: leadEditar.link_outros ?? '',
         notas: leadEditar.notas ?? '',
       })
     } else {
@@ -101,6 +105,10 @@ export function LeadForm({ aberto, onFechar, onGuardado, leadEditar, perfilActua
         etapa: (form.etapa as EtapaLead) || 'novo',
         valor_estimado: form.valor_estimado,
         owner_id: form.owner_id || undefined,
+        link_google_maps: form.link_google_maps || undefined,
+        link_facebook: form.link_facebook || undefined,
+        link_instagram: form.link_instagram || undefined,
+        link_outros: form.link_outros || undefined,
         notas: form.notas || undefined,
       }
 
@@ -247,7 +255,7 @@ export function LeadForm({ aberto, onFechar, onGuardado, leadEditar, perfilActua
                 id="valor"
                 type="number"
                 min="0"
-                step="100"
+                step="1"
                 value={form.valor_estimado ?? ''}
                 onChange={(e) => set('valor_estimado', e.target.value ? Number(e.target.value) : undefined)}
                 placeholder="1500"
@@ -274,6 +282,33 @@ export function LeadForm({ aberto, onFechar, onGuardado, leadEditar, perfilActua
               </Select>
             </div>
           )}
+
+          {/* Links */}
+          <div className="space-y-2">
+            <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Links</Label>
+            <div className="grid grid-cols-2 gap-3">
+              <Input
+                value={form.link_google_maps ?? ''}
+                onChange={(e) => set('link_google_maps', e.target.value)}
+                placeholder="Google Maps"
+              />
+              <Input
+                value={form.link_facebook ?? ''}
+                onChange={(e) => set('link_facebook', e.target.value)}
+                placeholder="Facebook"
+              />
+              <Input
+                value={form.link_instagram ?? ''}
+                onChange={(e) => set('link_instagram', e.target.value)}
+                placeholder="Instagram"
+              />
+              <Input
+                value={form.link_outros ?? ''}
+                onChange={(e) => set('link_outros', e.target.value)}
+                placeholder="Outros"
+              />
+            </div>
+          </div>
 
           {/* Notas */}
           <div className="space-y-2">

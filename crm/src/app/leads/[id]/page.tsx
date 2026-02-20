@@ -337,6 +337,37 @@ export default function LeadDetailPage({ params }: { params: Promise<{ id: strin
             </div>
           </div>
 
+          {/* Links */}
+          {(lead.link_google_maps || lead.link_facebook || lead.link_instagram || lead.link_outros) && (
+            <div className="grid grid-cols-2 gap-3 text-sm border rounded-lg p-4 bg-card">
+              <p className="col-span-2 text-xs font-medium text-muted-foreground uppercase tracking-wide">Links</p>
+              {lead.link_google_maps && (
+                <a href={lead.link_google_maps} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-blue-600 hover:underline truncate">
+                  <ExternalLink className="h-3 w-3 shrink-0" />
+                  Google Maps
+                </a>
+              )}
+              {lead.link_facebook && (
+                <a href={lead.link_facebook} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-blue-600 hover:underline truncate">
+                  <ExternalLink className="h-3 w-3 shrink-0" />
+                  Facebook
+                </a>
+              )}
+              {lead.link_instagram && (
+                <a href={lead.link_instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-blue-600 hover:underline truncate">
+                  <ExternalLink className="h-3 w-3 shrink-0" />
+                  Instagram
+                </a>
+              )}
+              {lead.link_outros && (
+                <a href={lead.link_outros} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-blue-600 hover:underline truncate">
+                  <ExternalLink className="h-3 w-3 shrink-0" />
+                  Outros
+                </a>
+              )}
+            </div>
+          )}
+
           {/* Botões de acção rápida */}
           {!lead.dados_anonimizados && (
             <div className="flex flex-wrap gap-2">

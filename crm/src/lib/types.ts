@@ -81,6 +81,10 @@ export interface Lead {
   tags: string[]
   estado: 'ativo' | 'arquivado'
   motivo_perda: string | null
+  link_google_maps: string | null
+  link_facebook: string | null
+  link_instagram: string | null
+  link_outros: string | null
   base_legal: BaseLegal
   dados_anonimizados: boolean
   created_at: string
@@ -138,6 +142,10 @@ export type LeadFormData = {
   proxima_acao_em?: string
   notas?: string
   tags?: string[]
+  link_google_maps?: string
+  link_facebook?: string
+  link_instagram?: string
+  link_outros?: string
   base_legal?: BaseLegal
   motivo_perda?: string
 }

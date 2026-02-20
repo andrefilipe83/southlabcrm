@@ -7,7 +7,14 @@
       "Bash(npx shadcn@latest add button card input label select badge dialog sheet table tabs dropdown-menu avatar tooltip checkbox textarea separator scroll-area alert sonnet --yes)",
       "Bash(npx shadcn@latest add button card input label select badge dialog sheet table tabs dropdown-menu avatar tooltip checkbox textarea separator scroll-area alert sonner popover calendar command --yes)",
       "Bash(npx tsc:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(curl:*)",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(npx next build:*)"
     ],
     "additionalDirectories": [
       "c:\\Users\\andre\\Desktop\\scripts\\Novo CRM\\crm\\src\\app"
