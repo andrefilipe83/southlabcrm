@@ -33,6 +33,20 @@ export async function createAtividade(dados: AtividadeFormData): Promise<Ativida
   return data as Atividade
 }
 
+export async function updateAtividade(id: string, descricao: string): Promise<Atividade> {
+  const supabase = getSupabase()
+
+  const { data, error } = await supabase
+    .from('atividades')
+    .update({ descricao })
+    .eq('id', id)
+    .select('*, autor:profiles(*)')
+    .single()
+
+  if (error) throw new Error(error.message)
+  return data as Atividade
+}
+
 export async function fetchAtividadesRecentes(limite = 10): Promise<Atividade[]> {
   const supabase = getSupabase()
 

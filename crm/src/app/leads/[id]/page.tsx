@@ -413,7 +413,11 @@ export default function LeadDetailPage({ params }: { params: Promise<{ id: strin
                 />
               </div>
             )}
-            <Timeline atividades={atividades} />
+            <Timeline
+              atividades={atividades}
+              currentUserId={perfilActual?.id}
+              onAtualizada={(a) => setAtividades((prev) => prev.map((at) => at.id === a.id ? a : at))}
+            />
           </div>
         </div>
 
