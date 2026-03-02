@@ -124,7 +124,9 @@ export function LeadForm({ aberto, onFechar, onGuardado, leadEditar, perfilActua
       onGuardado(lead)
       onFechar()
     } catch (err) {
-      toast.error('Erro ao guardar lead. Tenta novamente.')
+      const msg = err instanceof Error ? err.message : 'Erro desconhecido'
+      console.error('Erro ao guardar lead:', msg)
+      toast.error(`Erro ao guardar lead: ${msg}`)
     } finally {
       setAGuardar(false)
     }

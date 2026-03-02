@@ -88,8 +88,10 @@ export default function LeadDetailPage({ params }: { params: Promise<{ id: strin
       setLead(atualizado)
       await carregar() // reload actividades (trigger criou nova)
       toast.success('Etapa actualizada')
-    } catch {
-      toast.error('Erro ao actualizar etapa')
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Erro desconhecido'
+      console.error('Erro ao actualizar etapa:', msg)
+      toast.error(`Erro ao actualizar etapa: ${msg}`)
     }
   }
 
