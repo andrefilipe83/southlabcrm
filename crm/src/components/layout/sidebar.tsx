@@ -7,6 +7,7 @@ import {
   Kanban,
   Users,
   CheckSquare,
+  FileSpreadsheet,
   LogOut,
   Menu,
   X,
@@ -24,6 +25,7 @@ const NAV_ITEMS = [
   { href: '/pipeline', label: 'Pipeline', Icon: Kanban },
   { href: '/leads', label: 'Leads', Icon: Users },
   { href: '/tarefas', label: 'Tarefas', Icon: CheckSquare },
+  { href: '/folhas', label: 'Folhas de Leads', Icon: FileSpreadsheet },
 ]
 
 interface SidebarProps {
